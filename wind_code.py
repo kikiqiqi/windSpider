@@ -43,12 +43,16 @@ def getWindCode(search_info):
         if len(source_list) > 0:
             source = source_list[0]
             raw = source['_source']
-            print(search_info, raw['tagcode'])
-            return raw['tagcode']
+            if 'tagcode' in raw:
+                print(search_info, raw['tagcode'])
+                return raw['tagcode']
+            else:
+                print('invalid parse rule')
+                return ''
     except Exception as e:
         print("the reason of error is {}".format(e))
 
 if __name__ == "__main__":
-    search_info = "福建省晋江城市建设投资开发集团有限责任公司2017年度第三期永续票据"
+    search_info = "深圳前海联捷商业保理有限公司关于公开发行前海联捷2018年度第一期兴捷供应链应付账款资产支持票据"
     getWindCode(search_info)
 
