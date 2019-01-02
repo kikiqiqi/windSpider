@@ -6,7 +6,7 @@ import json
 
 #获取wind代码
 def getWindCode(search_info):
-    url = 'http://114.80.154.45/WindSearch/WindSearch/handler/SearchHandler.ashx'
+    url = 'http://125.215.147.40/WindSearch/WindSearch/handler/SearchHandler.ashx'
     header = {
         'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/605.1.15 (KHTML, like Gecko)',
         'content-type':'application/json;charset=utf-8'
@@ -26,7 +26,7 @@ def getWindCode(search_info):
         'userTypes':'',
         'range':'0',
         'sp':'title',
-        'wind.sessionid':'7f72e1d5ff184c9681b058eea8e1179c', # you should change the session_id when the response code is not 200
+        'wind.sessionid':'6fa0c0e5acbd43038876f0a286fa8ab6', # you should change the session_id when the response code is not 200
         'fileds':'title,windcode,spell,fullspell,tagcode,areacode,keyword,content,abstract',
         'sort':'_score desc,publishdate desc',
         'suggest':'0',
