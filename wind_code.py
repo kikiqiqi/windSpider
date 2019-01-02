@@ -41,14 +41,20 @@ def getWindCode(search_info):
         second_res = json.loads(first_res['dataor'])
         source_list = second_res['hits']['hits']
         if len(source_list) > 0:
-            source = source_list[0]
-            raw = source['_source']
+            for data in source_list:
+                if '_type' in data and data['_type'] == 'bond':
+                    source = data
+                    break
+            if '_source' in source:
+                raw = source['_source']
+            else:
+                return None
             if 'tagcode' in raw:
                 print(search_info, raw['tagcode'])
                 return raw['tagcode']
             else:
                 print('invalid parse rule')
-                return ''
+                return None
     except Exception as e:
         print("the reason of error is {}".format(e))
 
