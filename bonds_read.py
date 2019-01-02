@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     offset = 0
 
-    f = open("tag_code_csv.csv", "a")
+    f = open("tag_code.txt", "a")
     for i in range(offset, len(bonds_lst)):
         tag_code = getWindCode(bonds_lst[i])
         if tag_code:
